@@ -10,7 +10,7 @@ YOUR_TOKEN = "YOUR TOKEN"
 pipe = StableDiffusionPipeline.from_pretrained(MODEL_ID,  use_auth_token=YOUR_TOKEN)
 pipe.to(DEVICE)
 
-prompt = "A digital Illustration of Cloud shaped machines with a digital monkey, 4k, detailed, trending in artstation, fantasy vivid colors"
+prompt = "A digital Illustration of Cloud"
  
 image = pipe(prompt, guidance_scale=7.5)["sample"][0]
 image.save("test.png")
