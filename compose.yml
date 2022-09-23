@@ -8,6 +8,13 @@ services:
       - .cache/huggingface:/root/.cache/huggingface
     working_dir: /app
     tty: true
+    deploy:    
+      resources:    
+        reservations:    
+          devices:    
+            - driver: nvidia    
+              device_ids: ['0']    
+              capabilities: [gpu]
 
       #environment:
       #  - TOKEN_ISSUER=http://cognito:80
